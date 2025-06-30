@@ -1,0 +1,54 @@
+package main
+
+import "fmt"
+
+type geometry interface {
+   Area() float64
+   Perimeter() float64
+
+}
+
+// Rectangle
+ type  Rectangle struct {
+  length , width float64
+ 
+ }
+ 
+ func  ( r Rectangle) Area() float64 {
+ return r.length * r.width
+ 
+ }
+ 
+ 
+ func (r Rectangle) Perimeter() float64 {
+ 
+   return 2 * ( r.length + r.width);
+ }
+ 
+ 
+ // Circle
+ 
+ type Circle struct {
+   radius float64
+ 
+ }
+ 
+ func ( c Circle) Area() float64 {
+ // Area = π * r^2
+ return 3.14 * c.radius * c.radius
+ 
+ }
+ 
+func main() {
+  r := Rectangle {7,4}
+  c:= Circle {4}
+  fmt.Println("Reactangle", r)
+  fmt.Println( "Area of rectangle",r.Area())
+  fmt.Println( "Perimeter of rectangle",r.Perimeter())
+  
+  // circle
+  fmt.Println("Area of circle",c.Area()) 
+
+}
+
+
